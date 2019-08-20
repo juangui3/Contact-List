@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export default class AddContact extends React.Component {
+export default class EditContact extends React.Component {
 	constructor() {
 		super();
 		this.state = {
@@ -19,12 +19,12 @@ export default class AddContact extends React.Component {
 					return (
 						<div className="container">
 							<div>
-								<h1 className="text-center mt-5">Add a new contact</h1>
+								<h1 className="text-center mt-5">Edit a contact</h1>
 								<form>
 									<div className="form-group">
 										<label>Full Name</label>
 										<input
-											onChange={e => this.setState({ full_name: e.target.value })}
+                                            defaultValue={}
 											type="text"
 											className="form-control"
 											placeholder="Full Name"
@@ -33,7 +33,7 @@ export default class AddContact extends React.Component {
 									<div className="form-group">
 										<label>Email</label>
 										<input
-											onChange={e => this.setState({ email: e.target.value })}
+
 											type="email"
 											className="form-control"
 											placeholder="Enter email"
@@ -42,7 +42,7 @@ export default class AddContact extends React.Component {
 									<div className="form-group">
 										<label>Phone</label>
 										<input
-											onChange={e => this.setState({ phone: e.target.value })}
+
 											type="phone"
 											className="form-control"
 											placeholder="Enter phone"
@@ -51,7 +51,7 @@ export default class AddContact extends React.Component {
 									<div className="form-group">
 										<label>Address</label>
 										<input
-											onChange={e => this.setState({ address: e.target.value })}
+
 											type="text"
 											className="form-control"
 											placeholder="Enter address"
@@ -59,7 +59,7 @@ export default class AddContact extends React.Component {
 									</div>
 									<button
 										onClick={() =>
-											actions.addContact(
+											actions.editContact(
 												this.state.full_name,
 												this.state.email,
 												this.state.address,
