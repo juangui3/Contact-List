@@ -6,7 +6,7 @@ const getState = ({ getStore, setStore }) => {
 		},
 		actions: {
 			editContact: (id, name, email, address, phone) => {
-				fetch("https://assets.breatheco.de/apis/fake/contact/" + id, {
+				fetch("https://3000-c5f02dd8-79d7-4d40-8496-428d21d10ba6.ws-us1.gitpod.io/person/" + id, {
 					method: "PUT",
 					headers: { "Content-Type": "application/json" },
 					body: JSON.stringify({
@@ -17,7 +17,7 @@ const getState = ({ getStore, setStore }) => {
 						phone: phone
 					})
 				}).then(() => {
-					fetch("https://assets.breatheco.de/apis/fake/contact/agenda/new_contact_agenda")
+					fetch("https://3000-c5f02dd8-79d7-4d40-8496-428d21d10ba6.ws-us1.gitpod.io/contacts")
 						.then(response => response.json())
 						.then(data => {
 							setStore({ contacts: data });
@@ -25,7 +25,7 @@ const getState = ({ getStore, setStore }) => {
 				});
 			},
 			addContact: (name, email, address, phone) => {
-				fetch("https://assets.breatheco.de/apis/fake/contact/", {
+				fetch("https://3000-c5f02dd8-79d7-4d40-8496-428d21d10ba6.ws-us1.gitpod.io/person", {
 					method: "POST",
 					headers: { "Content-Type": "application/json" },
 					body: JSON.stringify({
@@ -36,20 +36,20 @@ const getState = ({ getStore, setStore }) => {
 						phone: phone
 					})
 				}).then(() => {
-					fetch("https://assets.breatheco.de/apis/fake/contact/agenda/new_contact_agenda")
+					fetch("https://3000-c5f02dd8-79d7-4d40-8496-428d21d10ba6.ws-us1.gitpod.io/contacts")
 						.then(response => response.json())
 						.then(data => {
 							setStore({ contacts: data });
 						});
 				});
 			},
-			updateContact: () => {},
+
 			deleteContact: id => {
-				fetch("https://assets.breatheco.de/apis/fake/contact/" + id, {
+				fetch("https://3000-c5f02dd8-79d7-4d40-8496-428d21d10ba6.ws-us1.gitpod.io/person/" + id, {
 					method: "DELETE",
 					headers: { "Content-Type": "application/json" }
 				}).then(() => {
-					fetch("https://assets.breatheco.de/apis/fake/contact/agenda/new_contact_agenda")
+					fetch("https://3000-c5f02dd8-79d7-4d40-8496-428d21d10ba6.ws-us1.gitpod.io/contacts")
 						.then(response => response.json())
 						.then(data => {
 							setStore({ contacts: data });

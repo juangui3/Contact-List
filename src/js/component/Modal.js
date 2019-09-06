@@ -41,7 +41,11 @@ class Modal extends React.Component {
 							<button type="button" className="btn btn-primary">
 								Oh no!
 							</button>
-							<button type="button" className="btn btn-secondary" data-dismiss="modal">
+							<button
+								type="button"
+								className="btn btn-secondary"
+								data-dismiss="modal"
+								onClick={() => actions.deleteContact(item.id)}>
 								Do it!
 							</button>
 						</div>

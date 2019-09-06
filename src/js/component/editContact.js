@@ -24,7 +24,7 @@ export default class EditContact extends React.Component {
 									<div className="form-group">
 										<label>Full Name</label>
 										<input
-                                            defaultValue={}
+											defaultValue=""
 											type="text"
 											className="form-control"
 											placeholder="Full Name"
@@ -32,30 +32,15 @@ export default class EditContact extends React.Component {
 									</div>
 									<div className="form-group">
 										<label>Email</label>
-										<input
-
-											type="email"
-											className="form-control"
-											placeholder="Enter email"
-										/>
+										<input type="email" className="form-control" placeholder="Enter email" />
 									</div>
 									<div className="form-group">
 										<label>Phone</label>
-										<input
-
-											type="phone"
-											className="form-control"
-											placeholder="Enter phone"
-										/>
+										<input type="phone" className="form-control" placeholder="Enter phone" />
 									</div>
 									<div className="form-group">
 										<label>Address</label>
-										<input
-
-											type="text"
-											className="form-control"
-											placeholder="Enter address"
-										/>
+										<input type="text" className="form-control" placeholder="Enter address" />
 									</div>
 									<button
 										onClick={() =>

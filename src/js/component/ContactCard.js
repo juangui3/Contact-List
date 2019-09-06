@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 
 class ContactCard extends React.Component {
 	constructor() {
@@ -29,7 +30,9 @@ class ContactCard extends React.Component {
 									<div className="col-12 col-sm-6 col-md-9 text-center text-sm-left">
 										<div className=" float-right">
 											<button className="btn">
-												<i className="fas fa-pencil-alt mr-3" />
+												<Link to="/edit">
+													<i className="fas fa-pencil-alt mr-3" />
+												</Link>
 											</button>
 											<button className="btn" onClick={() => actions.deleteContact(item.id)}>
 												<i className="fas fa-trash-alt" />
